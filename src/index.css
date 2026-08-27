@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0a0b0f;
+}
+
+.font-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Custom scrollbar for the dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #14151c;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2c38;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3d4e;
+}
+
+/* Smooth calendar day transitions */
+.calendar-day {
+  transition: all 0.15s ease;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.5);
+}
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.fade-in-up {
+  animation: fadeInUp 0.4s ease-out both;
+}
+
+/* Skeleton shimmer */
+@keyframes shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #14151c 25%, #1e1f28 50%, #14151c 75%);
+  background-size: 800px 100%;
+  animation: shimmer 1.5s infinite linear;
+}
