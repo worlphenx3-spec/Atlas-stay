@@ -89,7 +89,7 @@ export default function App() {
             }
           }}
         />
-        {authModal && <AuthModal mode="host" onClose={() => setAuthModal(null)} />}
+        {authModal && <AuthModal mode="host" onClose={() => setAuthModal(false)} />}
       </>
     );
   }
